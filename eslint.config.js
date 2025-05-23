@@ -29,6 +29,7 @@ export default [
       browser: true,
       node: true,
       es2021: true,
+      'vitest/globals': true,
     },
 
     plugins: {
