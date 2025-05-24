@@ -38,21 +38,19 @@ export const getOrdersMock = http.get<never, never, GetOrdersResponse>(
     let filteredOrders = orders
 
     if (customerName) {
-      filteredOrders = filteredOrders.filter((order) => {
-        order.customerName.includes(customerName)
-      })
+      filteredOrders = filteredOrders.filter((order) =>
+        order.customerName.includes(customerName),
+      )
     }
 
     if (orderId) {
-      filteredOrders = filteredOrders.filter((order) => {
-        order.orderId.includes(orderId)
-      })
+      filteredOrders = filteredOrders.filter((order) =>
+        order.orderId.includes(orderId),
+      )
     }
 
     if (status) {
-      filteredOrders = filteredOrders.filter((order) => {
-        order.status === status
-      })
+      filteredOrders = filteredOrders.filter((order) => order.status === status)
     }
 
     const paginatedOrders = filteredOrders.slice(
